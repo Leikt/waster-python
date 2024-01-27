@@ -1,6 +1,8 @@
 # Project
 .env*
 exploration
+tmp/*
+!tmp/.keep
 
 # IDE: Intelij Idea
 .idea
