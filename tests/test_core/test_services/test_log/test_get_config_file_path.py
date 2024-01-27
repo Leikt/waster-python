@@ -9,7 +9,7 @@ from waster.core.services.log import _get_config_file_path, LOGGING_CFG_ENVVAR, 
 def test_get_config_file_path___w_file_wo_envvar():
     # With a file but no environment variable
     temp = tempfile.TemporaryFile()
-    result = _get_config_file_path(temp.name)
+    result = _get_config_file_path(str(temp.name))
     assert result == temp.name
 
 
@@ -17,15 +17,14 @@ def test_get_config_file_path___w_file_w_envvar():
     # With environment variable and a file
     os.environ[LOGGING_CFG_ENVVAR] = 'foo.json'
     temp = tempfile.TemporaryFile()
-    result = _get_config_file_path(temp.name)
+    result = _get_config_file_path(str(temp.name))
     assert result == temp.name
 
 
 def test_get_config_file_path___wo_file_w_envvar():
     # With environment variable but without file
-    temp = tempfile.TemporaryFile(suffix='json')
-    print(f'TEMP NAME: {temp.name}')
-    os.environ[LOGGING_CFG_ENVVAR] = temp.name
+    temp = tempfile.TemporaryFile()
+    os.environ[LOGGING_CFG_ENVVAR] = str(temp.name)
     result = _get_config_file_path()
     assert result == temp.name
 
