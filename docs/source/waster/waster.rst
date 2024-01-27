@@ -1,5 +1,5 @@
-waster.core package
-===================
+waster package
+==============
 
 Subpackages
 -----------
@@ -7,14 +7,15 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   waster.core.domain
-   waster.core.ports
-   waster.core.services
+   waster.command
+   waster.core
+   waster.input_adapters
+   waster.output_adapters
 
 Module contents
 ---------------
 
-.. automodule:: waster.core
+.. automodule:: waster
    :members:
    :undoc-members:
    :show-inheritance:
