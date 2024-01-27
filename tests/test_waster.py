@@ -1,5 +1,5 @@
-from src.waster import main
+from waster import main
 
 
 def test_main():
-    assert main() == 1
+    assert main() == 0

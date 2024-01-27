@@ -18,7 +18,6 @@ def read_requirements(path):
 
 setup(
     name="waster",
-    version=read("VERSION"),
     author="Leikt Sol'Reihin",
     # url="https://github.com/Leikt/waster",
     python_requires=">3.10.0",
@@ -33,6 +32,9 @@ setup(
         "doc": read_requirements('./requirements/doc.txt')
     },
     entry_points={
-        "console_scripts": ["waster = waster.__init__:main"]
+        "console_scripts": ["waster = waster:main"]
     },
+
+    use_scm_version=True,
+    setup_requires=['setuptools_scm']
 )
