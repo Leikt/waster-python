@@ -23,7 +23,7 @@ def test_get_config_file_path___w_file_w_envvar():
 
 def test_get_config_file_path___wo_file_w_envvar():
     # With environment variable but without file
-    temp = tempfile.TemporaryFile()
+    temp = tempfile.TemporaryFile(suffix='json')
     print(f'TEMP NAME: {temp.name}')
     os.environ[LOGGING_CFG_ENVVAR] = temp.name
     result = _get_config_file_path()
