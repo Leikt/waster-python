@@ -8,6 +8,7 @@ Subpackages
    :maxdepth: 4
 
    waster.core.services.log
+   waster.core.services.memory_waster
 
 Module contents
 ---------------
